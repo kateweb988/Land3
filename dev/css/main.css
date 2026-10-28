@@ -224,14 +224,14 @@
 
 @font-face {
   font-family: "Forum";
-  src: url("../fonts/Forum.woff2") format("woff2");
+  src: url("..fonts/Forum.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Great Vibes";
-  src: url("../fonts/GreatVibes-Regular.woff2") format("woff2");
+  src: url("..fonts/GreatVibes-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -2084,10 +2084,6 @@
 
 .mob {
   display: none;
-}
-
-body {
-  margin: 0;
 }
 
 @media screen and (max-width: 1700px) {
