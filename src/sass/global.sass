@@ -1,0 +1,166 @@
+.template-content
+   font-family: 'Forum', sans-serif
+   background: var(--color-bg)
+   font-size: 18px
+   line-height: 120%
+   color: var(--color-text-black)
+   overflow: hidden
+   position: relative
+   display: flex
+   flex-direction: column
+   min-height: 100vh
+   --color-text-primary-opacity: rgba(166, 131, 106, 0.2)
+   --color-text-primary: rgba(166, 131, 106, 1)
+   --color-black: #000000
+   --color-white: #FFFFFF
+   --color-text-title: #080808
+   --color-text-black: rgba(15, 15, 15, 1)
+   --color-bg: #F0E8E2
+   --color-red: rgba(192, 57, 43, 1)
+   --space-personal-greeting-top: clamp(56px, calc(48.2px + 2.4375vw), 95px)
+   --space-personal-greeting-bottom: clamp(36px, calc(23px + 4.0625vw), 101px)
+   --space-wishlist-top: clamp(31px, calc(24.2px + 2.125vw), 65px)
+   --space-wishlist-bottom: clamp(43px, calc(35.4px + 2.375vw), 81px)
+   --space-about-top: clamp(41px, calc(31.2px + 3.0625vw), 90px)
+   --space-about-bottom: clamp(17px, calc(35px + -0.9375vw), 32px)
+   --space-faq-top: clamp(53px, calc(44.8px + 2.5625vw), 94px)
+   --space-faq-bottom: clamp(25px, calc(22.6px + 0.75vw), 37px)
+   --space-guest-top: clamp(40px, calc(27.8px + 3.8125vw), 101px)
+   --space-guest-bottom: clamp(55px, calc(48.4px + 2.0625vw), 88px)
+   --space-contact-top: clamp(41px, calc(39px + 0.625vw), 51px)
+   --space-contact-bottom: clamp(29px, calc(26.6px + 0.75vw), 41px)
+   --space-footer-top: clamp(39px, calc(25.4px + 4.25vw), 107px)
+   --space-footer-bottom: clamp(0px, calc(-6px + 1.875vw), 30px)
+   --space-story-top: clamp(73px, calc(65px + 2.5vw), 113px)
+   --space-story-bottom: clamp(41px, calc(37.2px + 1.1875vw), 60px)
+   --space-timing-top: clamp(47px, calc(41.8px + 1.625vw), 73px)
+   --space-timing-bottom: clamp(49px, calc(40.4px + 2.6875vw), 92px)
+.template-content[data-theme="green"]
+   --color-bg: white
+   --color-text-primary: #99A168
+   --color-text-primary-opacity: rgba(153, 161, 104, 0.2)
+   .about__pic2::before, .about__pic1::before
+      background: url(../img/dot-green.svg) center / contain no-repeat
+   .story .swiper-gallery .swiper-slide h3:after
+      background: url(../img/after-green.svg) center / contain no-repeat
+   .timing__item span
+      background: rgb(235,236,225)
+   .guest:after
+      background: rgba(153, 161, 104, 0.63)
+   .map__top
+      background: rgb(235,236,225)
+   .map__tabs button
+      box-shadow: 0px 4px 16px 0px rgba(153, 161, 104, 0.39)
+   .guest__form_btn, .wishlist__btn
+      box-shadow: 0px 4px 16px 0px rgba(153, 161, 104, 0.39)
+.template-content[data-theme="red"]
+   --color-bg: white
+   --color-text-primary: #A16868
+   --color-text-primary-opacity: rgba(161, 104, 104, 0.2)
+   .about__pic2::before, .about__pic1::before
+      background: url(../img/dot-red.svg) center / contain no-repeat
+   .story .swiper-gallery .swiper-slide h3:after
+      background: url(../img/after-red.svg) center / contain no-repeat
+   .timing__item span
+      background: rgb(236,225,225)
+   .guest:after
+      background: rgba(161, 104, 104, 0.63)
+   .map__top
+      background: rgb(236,225,225)
+   .map__tabs button
+      box-shadow: 0px 4px 16px 0px rgba(161, 104, 104, 0.39)
+   .guest__form_btn, .wishlist__btn
+      box-shadow: 0px 4px 16px 0px rgba(161, 104, 104, 0.39)
+.template-content[data-theme="blue"]
+   --color-bg: white
+   --color-text-primary: #6880A1
+   --color-text-primary-opacity: rgba(104, 128, 161, 0.2)
+   .about__pic2::before, .about__pic1::before
+      background: url(../img/dot-blue.svg) center / contain no-repeat
+   .story .swiper-gallery .swiper-slide h3:after
+      background: url(../img/after-blue.svg) center / contain no-repeat
+   .timing__item span
+      background: rgb(225,230,236)
+   .guest:after
+      background: rgba(104, 128, 161, 0.63)
+   .map__top
+      background: rgb(225,230,236)
+   .map__tabs button
+      box-shadow: 0px 4px 16px 0px rgba(104, 128, 161, 0.39)
+   .guest__form_btn, .wishlist__btn
+      box-shadow: 0px 4px 16px 0px rgba(104, 128, 161, 0.39)
+.template-content
+   a
+      text-decoration: none
+      box-sizing: border-box
+      transition: 0.5s !important
+      &:hover
+         color: var(--color-text-primary)
+   ul
+      margin: 0
+      padding: 0
+      list-style-type: none
+   a
+      transition: color 0.5s ease
+      box-sizing: border-box
+   button
+      cursor: pointer
+      box-sizing: border-box
+   textarea
+      transition: border 0.5s
+      box-sizing: border-box
+      &:focus
+         transition: border 0.5s
+         outline: none
+   input
+      transition: 0.5s
+      box-sizing: border-box
+      &:disabled
+         pointer-events: none
+         opacity: 0.5
+      &:focus
+         transition: 0.5s
+      &:focus-visible
+         outline: initial
+   input::-webkit-input-placeholder
+      color: #4a4a4a !important
+   input::-moz-placeholder
+      color: #4a4a4a !important
+   input:-ms-input-placeholder
+      color: #4a4a4a !important
+   input:-moz-placeholder
+      color: #4a4a4a !important
+   div
+      box-sizing: border-box
+.container
+   padding: 0 15px
+   width: 100%
+   max-width: 1337px
+   margin: 0 auto
+.d-flex, .q
+   display: flex
+.hide
+   display: none !important
+.template-title1
+   position: relative
+   z-index: 2
+   color: rgba(8, 8, 8, 1)
+   font-size: clamp(32px, calc(17.4px + 4.5625vw), 105px)
+   font-weight: 400
+   line-height: 120%
+   letter-spacing: 0%
+   text-align: center
+   text-transform: uppercase
+   margin: 0
+.template-title2
+   margin: 0
+   font-size: clamp(24px, calc(16px + 2.5vw), 64px)
+   font-weight: 400
+   color: var(--color-text-black)
+   line-height: 120%
+   width: 100%
+   max-width: 800px
+   text-transform: uppercase
+.prog__content, .timing__tabs, .map__tabs, .menu ul
+   scrollbar-width: thin
+   scrollbar-color: transparent transparent
