@@ -119,6 +119,15 @@
   box-shadow: 0px 4px 16px 0px rgba(104, 128, 161, 0.39);
 }
 
+.template-content .template-container {
+  padding: 0 15px;
+  width: 100%;
+  max-width: 1337px;
+  margin: 0 auto;
+}
+.template-content .d-flex, .template-content .q {
+  display: flex;
+}
 .template-content a {
   text-decoration: none;
   box-sizing: border-box;
@@ -178,21 +187,6 @@
   box-sizing: border-box;
 }
 
-.container {
-  padding: 0 15px;
-  width: 100%;
-  max-width: 1337px;
-  margin: 0 auto;
-}
-
-.d-flex, .q {
-  display: flex;
-}
-
-.hide {
-  display: none !important;
-}
-
 .template-title1 {
   position: relative;
   z-index: 2;
@@ -224,14 +218,14 @@
 
 @font-face {
   font-family: "Forum";
-  src: url("..fonts/Forum.woff2") format("woff2");
+  src: url("../fonts/Forum.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Great Vibes";
-  src: url("..fonts/GreatVibes-Regular.woff2") format("woff2");
+  src: url("../fonts/GreatVibes-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -433,6 +427,14 @@
   position: absolute;
   left: -151px;
   top: -88px;
+}
+.template-main .template-title1 {
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: manual;
+  white-space: normal;
 }
 
 .calendar {
@@ -1597,7 +1599,7 @@
   font-size: 24px;
   line-height: 26px;
 }
-.map__canvas .container {
+.map__canvas .template-container {
   position: relative;
 }
 .map__canvas #map-canvas {
@@ -1707,23 +1709,23 @@
   flex-wrap: wrap;
   gap: 20px 50px;
   justify-content: center;
+  align-items: flex-start;
 }
 .dress__photos a {
-  display: flex;
-  box-shadow: 0px 27px 50.0999984741px 0px rgb(230, 220, 213);
-  align-items: center;
-  justify-content: center;
+  display: block;
   width: 22%;
-  height: 334px;
+  height: auto;
+  aspect-ratio: 3/4;
+  flex-shrink: 0;
   overflow: hidden;
   border-radius: 7px;
+  box-shadow: 0px 27px 50.1px 0px rgb(230, 220, 213);
 }
 .dress__photos a img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  overflow: hidden;
-  border-radius: 7px;
   object-position: center;
 }
 .dress__info {
@@ -1872,7 +1874,7 @@
   height: 231px;
 }
 
-.arrows {
+.template-arrows {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -1884,7 +1886,7 @@
   background: var(--color-white);
 }
 
-.arrow {
+.template-arrow {
   display: flex;
   cursor: pointer;
   transition: 0.5s;
@@ -1899,7 +1901,7 @@
   bottom: 0;
   margin: 0;
 }
-.arrow:hover {
+.template-arrow:hover {
   background: var(--color-black);
 }
 
@@ -1926,7 +1928,7 @@
   top: -46px;
   margin-left: -32px;
 }
-.timing .container {
+.timing .template-container {
   position: relative;
 }
 .timing__pic {
@@ -2082,7 +2084,7 @@
   font-size: 14px;
 }
 
-.mob {
+.template-mob {
   display: none;
 }
 
@@ -2117,7 +2119,6 @@
   }
   .dress__photos a {
     width: 21.6%;
-    height: 276px;
   }
   .footer__pic {
     width: 600px;
@@ -2146,7 +2147,6 @@
   }
   .dress__photos a {
     width: 21.6%;
-    height: 276px;
   }
   .about__letter {
     left: -53px;
@@ -2225,20 +2225,22 @@
   }
   .template-menu {
     position: fixed;
-    top: 0px;
+    top: 0;
     right: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    height: 100dvh;
     padding: 30px 16px 35px;
     background: var(--color-white);
     transform: translateX(200%);
     transition: transform 0.5s;
     z-index: 2101;
     overflow: hidden;
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
   .template-menu.active {
-    transform: translateY(0);
+    transform: translateX(0);
   }
   .template-menu__bg {
     object-fit: contain;
@@ -2253,9 +2255,12 @@
     flex-direction: column;
     position: relative;
     z-index: 2;
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: none;
     overflow-y: auto;
-    max-height: 417px;
     overflow-x: hidden;
+    overscroll-behavior: contain;
   }
   .template-menu ul li {
     padding-bottom: 15px;
@@ -2273,7 +2278,7 @@
     transform: initial;
     position: relative;
     left: 0;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     width: 44px;
     height: 44px;
   }
@@ -2282,6 +2287,7 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 37px;
+    flex-shrink: 0;
   }
   .template-menu__close {
     width: 24px;
@@ -2389,9 +2395,6 @@
   .timer__item span {
     line-height: 100%;
     margin-bottom: 10px;
-  }
-  .dress__photos a {
-    height: 250px;
   }
   .dress__content {
     border: none;
@@ -2572,7 +2575,7 @@
     max-width: 600px;
     margin-bottom: 40px;
   }
-  .arrows {
+  .template-arrows {
     top: 35px;
   }
   .story .swiper-gallery .swiper-slide a {
@@ -2638,9 +2641,6 @@
   }
   .timing__tabs {
     justify-content: flex-start;
-  }
-  .dress__photos a {
-    height: 180px;
   }
   .dress__photos a {
     width: 22.7%;
@@ -2719,11 +2719,11 @@
   .story .swiper-gallery .swiper-slide a {
     height: 285px;
   }
-  .story .container {
+  .story .template-container {
     padding-bottom: 55px;
     position: relative;
   }
-  .arrows {
+  .template-arrows {
     position: absolute;
     bottom: -45px;
     left: 50%;
@@ -2733,12 +2733,12 @@
     padding: 3px;
     top: initial;
   }
-  .arrow {
+  .template-arrow {
     width: 47px;
     height: 47px;
     box-sizing: border-box;
   }
-  .arrow img {
+  .template-arrow img {
     width: 8px;
   }
   .timing__text {
@@ -2769,7 +2769,6 @@
   }
   .dress__photos a {
     width: 45.8%;
-    height: 280px;
   }
   .guest__item {
     width: 100%;
@@ -2944,7 +2943,7 @@
     padding-bottom: 55px;
     position: relative;
   }
-  .arrows {
+  .template-arrows {
     position: absolute;
     bottom: -45px;
     left: 50%;
@@ -2954,12 +2953,12 @@
     padding: 3px;
     top: initial;
   }
-  .arrow {
+  .template-arrow {
     width: 47px;
     height: 47px;
     box-sizing: border-box;
   }
-  .arrow img {
+  .template-arrow img {
     width: 8px;
   }
   .calendar__head {
@@ -3399,7 +3398,7 @@
     text-align: center;
     margin: 34px auto 0;
   }
-  .mob {
+  .template-mob {
     display: block !important;
   }
   .about .template-title2 {

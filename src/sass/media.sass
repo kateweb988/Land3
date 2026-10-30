@@ -20,7 +20,6 @@
          line-height: 36px
    .dress__photos a 
       width: 21.6%
-      height: 276px
    .footer__pic
       width: 600px
       height: 637px
@@ -40,7 +39,6 @@
       left: -406px
    .dress__photos a 
       width: 21.6%
-      height: 276px
    .about__letter
       left: -53px
    .faq__pic
@@ -95,19 +93,21 @@
       display: block
    .template-menu
       position: fixed
-      top: 0px
+      top: 0
       right: 0
       width: 100%
-      height: 100%
+      height: 100vh
+      height: 100dvh
       padding: 30px 16px 35px
       background: var(--color-white)
       transform: translateX(200%)
       transition: transform 0.5s
       z-index: 2101
       overflow: hidden
-      display: block
+      display: flex
+      flex-direction: column
       &.active
-         transform: translateY(0)
+         transform: translateX(0)
       &__bg
          object-fit: contain
          position: absolute
@@ -120,9 +120,12 @@
          flex-direction: column
          position: relative
          z-index: 2
+         flex: 1 1 auto
+         min-height: 0
+         max-height: none
          overflow-y: auto
-         max-height: 417px
          overflow-x: hidden
+         overscroll-behavior: contain
          li
             padding-bottom: 15px
             margin-bottom: 15px
@@ -137,7 +140,7 @@
          transform: initial
          position: relative
          left: 0
-         margin-bottom: 0px
+         margin-bottom: 0
          width: 44px
          height: 44px
       &__top
@@ -145,6 +148,7 @@
          align-items: center
          justify-content: space-between
          margin-bottom: 37px
+         flex-shrink: 0
       &__close
          width: 24px
          border: none
@@ -227,8 +231,6 @@
    .timer__item span
       line-height: 100%
       margin-bottom: 10px
-   .dress__photos a
-      height: 250px
    .dress__content
       border: none 
       padding-right: 0
@@ -364,7 +366,7 @@
    .story p
       max-width: 600px
       margin-bottom: 40px
-   .arrows
+   .template-arrows
       top: 35px
    .story .swiper-gallery .swiper-slide a
       height: 328px
@@ -410,8 +412,6 @@
       line-height: 100%
    .timing__tabs
       justify-content: flex-start
-   .dress__photos a
-      height: 180px
    .dress__photos a 
       width: 22.7%
    .dress__content h2
@@ -469,10 +469,10 @@
    .story .swiper-gallery .swiper-slide a
       height: 285px
    .story
-      .container 
+      .template-container
          padding-bottom: 55px
          position: relative
-   .arrows
+   .template-arrows
       position: absolute
       bottom: -45px
       left: 50%
@@ -481,7 +481,7 @@
       height: 52px
       padding: 3px
       top: initial
-   .arrow
+   .template-arrow
       width: 47px
       height: 47px 
       box-sizing: border-box
@@ -508,7 +508,6 @@
       right: -24px
    .dress__photos a 
       width: 45.8%
-      height: 280px
    .guest__item
       width: 100%
    .footer__area
@@ -644,7 +643,7 @@
       .container 
          padding-bottom: 55px
          position: relative
-   .arrows
+   .template-arrows
       position: absolute
       bottom: -45px
       left: 50%
@@ -653,7 +652,7 @@
       height: 52px
       padding: 3px
       top: initial
-   .arrow
+   .template-arrow
       width: 47px
       height: 47px 
       box-sizing: border-box
@@ -991,7 +990,7 @@
       line-height: 20px
       text-align: center
       margin: 34px auto 0
-   .mob 
+   .template-mob
       display: block !important
    .about 
       .template-title2
